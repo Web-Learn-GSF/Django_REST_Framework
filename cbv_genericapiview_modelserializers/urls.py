@@ -19,9 +19,8 @@ from django.urls import re_path as url
 
 from cbv_genericapiview_modelserializers import views
 
-
 urlpatterns = [
     url(r'^books_genericapiview_modelserializers/$', views.Books_Genericapiview_ModelSerializers.as_view()),
-    # 有名分组：P<pk>
-    url(r'^books_genericapiview_modelserializers/(?P<pk>\d+)$', views.Book_Genericapiview_ModelSerializers.as_view()), 
+    # 有名分组：P<pk>，会把pk当作参数，传递给get等请求
+    url(r'^books_genericapiview_modelserializers/(?P<pk>\d+)$', views.Book_Genericapiview_ModelSerializers.as_view()),
 ]

@@ -45,7 +45,14 @@ class Books_Viewset_Pro_Max(ModelViewSet):
     queryset = BookInfo.objects.all()
     serializer_class = BookSerializer
 
+    # 当detail=True的时候，标识针对特定的对象，则函数传参的时候，需要给定pk主键
     @action(methods=['get'], detail=False, url_path='login')
     def login(self, request):
         """登录"""
+        return Response({'message': '成功！！'})
+
+    @action(methods=['get'], detail=True, url_path='mypprocess')
+    def mypprocess(self, request, pk=None):
+        instance = self.get_object()
+        """处理"""
         return Response({'message': '成功！！'})

@@ -22,7 +22,6 @@ from . import views
 from rest_framework import routers
 
 router = routers.DefaultRouter()
-# router = routers.SimpleRouter()
 router.register(r'books_viewset_pro_max', views.Books_Viewset_Pro_Max, basename='books_viewset_pro_max')
 
 urlpatterns = [
